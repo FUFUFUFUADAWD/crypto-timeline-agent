@@ -39,17 +39,23 @@ def _ticker_gateio(pair, timeout=None):
 
 
 def _ticker_binance(binance_symbol, timeout=None):
-    # data-api.binance.vision 是币安官方公开行情域名，中国大陆可直连
-    d = _get_json("https://data-api.binance.vision/api/v3/ticker/24hr?symbol=" + binance_symbol,
-                  timeout=timeout)
-    return {
-        "source": "Binance",
-        "last_price": float(d["lastPrice"]),
-        "change_pct": float(d["priceChangePercent"]),
-        "high": float(d["highPrice"]),
-        "low": float(d["lowPrice"]),
-        "quote_volume": float(d["quoteVolume"]),
-    }
+    # 币安两个公开行情域名：vision 中国大陆可直连，api.binance.com 海外可直连
+    last_err = None
+    for host in ("https://data-api.binance.vision", "https://api.binance.com"):
+        try:
+            d = _get_json(host + "/api/v3/ticker/24hr?symbol=" + binance_symbol,
+                          timeout=timeout)
+            return {
+                "source": "Binance",
+                "last_price": float(d["lastPrice"]),
+                "change_pct": float(d["priceChangePercent"]),
+                "high": float(d["highPrice"]),
+                "low": float(d["lowPrice"]),
+                "quote_volume": float(d["quoteVolume"]),
+            }
+        except Exception as e:
+            last_err = e
+    raise last_err
 
 
 def _ticker_okx(inst_id, timeout=None):
@@ -167,13 +173,14 @@ def get_klines(symbol, interval="1d", limit=30, binance_symbol=None, timeout=Non
     def _fmt_ms(ts_ms):
         return datetime.datetime.utcfromtimestamp(ts_ms / 1000).strftime("%Y-%m-%d")
 
-    # 源 1：币安公开行情域名（国内可直连）
-    try:
-        rows = _get_json("https://data-api.binance.vision/api/v3/klines?symbol={}&interval={}&limit={}"
-                         .format(binance_symbol, interval, limit), timeout=timeout)
-        return [(_fmt_ms(r[0]), float(r[4])) for r in rows]
-    except Exception as e:
-        print("[行情] Binance K线失败，尝试 Gate.io: {}".format(e))
+    # 源 1：币安（双域名：vision 国内可直连 / api.binance.com 海外可直连）
+    for host in ("https://data-api.binance.vision", "https://api.binance.com"):
+        try:
+            rows = _get_json(host + "/api/v3/klines?symbol={}&interval={}&limit={}"
+                             .format(binance_symbol, interval, limit), timeout=timeout)
+            return [(_fmt_ms(r[0]), float(r[4])) for r in rows]
+        except Exception as e:
+            print("[行情] Binance({}) K线失败: {}".format(host.split('/')[2], e))
 
     # 源 2：Gate.io（国内可直连；返回 [时间(秒), 成交额, 收盘, 最高, 最低, 开盘, ...]）
     try:
