@@ -152,10 +152,17 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def run(port=8000):
-    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    # 部署环境：通过 PORT 环境变量指定端口并绑定 0.0.0.0；本地默认 127.0.0.1
+    env_port = os.environ.get("PORT")
+    if env_port:
+        host, port = "0.0.0.0", int(env_port)
+    else:
+        host = "127.0.0.1"
+    server = ThreadingHTTPServer((host, port), Handler)
     print("=" * 56)
     print("  链事纪 · Crypto Timeline Agent Web 控制台已启动")
-    print("  请在浏览器打开:  http://127.0.0.1:{}".format(port))
+    print("  请在浏览器打开:  http://{}:{}".format(
+        "127.0.0.1" if host == "0.0.0.0" else host, port))
     print("  按 Ctrl+C 停止服务")
     print("=" * 56)
     try:
