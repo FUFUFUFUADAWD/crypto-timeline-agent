@@ -11,7 +11,7 @@ Crypto Timeline Agent 是一个**零依赖**的 Python 命令行 AI Agent，面�
 - 🕘 **历史事件时间线**：内置 10 个主流币种（BTC、ETH、BNB、SOL、XRP、DOGE、ADA、LTC、TRX、ZEC）从创世至今的 90+ 条重大金融事件，覆盖监管政策、技术升级、市场里程碑、安全事件、机构采用等 7 大分类，每条事件标注「利好 / 利空 / 中性」影响方向
 - 🖥️ **Web 可视化控制台「链事纪」**：一行命令启动本地 Web 分析台，含市场总览（全币种 24h/7日/30日 涨跌表）、大事件时间线、最新资讯、研究报告四大面板，支持一键复制 / 下载 Markdown 报告
 - 📰 **最新资讯聚合**：自动抓取 CoinDesk、Cointelegraph、Decrypt、The Block、Bitcoin Magazine 等主流媒体 RSS，按币种关键词智能过滤
-- 💹 **实时行情**：多数据源自动容灾（Binance → OKX → CoinGecko → CoinPaprika），任一源不可用自动切换
+- 💹 **实时行情**：多数据源自动容灾（Binance 官方公开行情 → Gate.io → OKX → CoinLore → CoinGecko → CoinPaprika），任一源不可用自动切换，**中国大陆网络可直连使用**
 - 📊 **一键生成报告**：输出 HTML（可视化时间线 + 走势图，红涨绿跌配色）与 Markdown 双格式资讯报告
 - 🗣️ **自然语言提问**：`ask` 模式支持「2021年比特币发生了什么」这类口语化查询
 - 🔌 **全程零依赖**：只用 Python 标准库，无需安装任何第三方包，无需 API Key
@@ -119,7 +119,7 @@ crypto-timeline-agent/
 ## 数据来源与免责声明
 
 - 历史事件：人工整理自公开资料，如有疏漏欢迎指正
-- 实时行情：Binance / OKX / CoinGecko / CoinPaprika 公共接口
+- 实时行情：Binance（data-api.binance.vision 公开行情域名）/ Gate.io / OKX / CoinLore / CoinGecko / CoinPaprika 公共接口，按序容灾切换
 - 新闻资讯：各媒体公开 RSS 源
 - **本项目仅供学习研究，不构成任何投资建议。**
 
