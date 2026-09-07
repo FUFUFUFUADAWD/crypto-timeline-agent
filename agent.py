@@ -75,7 +75,7 @@ def cmd_price(args):
     coin = events_db.get_coin(args.coin)
     if not coin:
         sys.exit("暂不支持币种 {}，可用 list 命令查看支持列表。".format(args.coin))
-    t = market.get_ticker(coin["binance_symbol"])
+    t = market.get_ticker(args.coin.upper(), coin["binance_symbol"])
     if not t:
         sys.exit("行情获取失败，请检查网络后重试。")
     sign = "+" if t["change_pct"] >= 0 else ""
