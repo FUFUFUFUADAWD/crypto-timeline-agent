@@ -31,7 +31,7 @@ python --version
 **第 2 步：获取本项目**
 
 ```bash
-git clone https://github.com/zhuozhuo332-cloud/crypto-timeline-agent.git
+git clone https://github.com/FUFUFUFUADAWD/crypto-timeline-agent.git
 cd crypto-timeline-agent
 ```
 
