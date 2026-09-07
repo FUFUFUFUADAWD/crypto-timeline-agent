@@ -1,0 +1,175 @@
+{
+  "BTC": {
+    "name": "比特币",
+    "name_en": "Bitcoin",
+    "binance_symbol": "BTCUSDT",
+    "keywords": ["bitcoin", "btc", "比特币"],
+    "events": [
+      {"date": "2008-10-31", "title": "比特币白皮书发布", "description": "中本聪发布《Bitcoin: A Peer-to-Peer Electronic Cash System》，首次提出去中心化数字货币方案。", "category": "技术升级", "impact": "中性"},
+      {"date": "2009-01-03", "title": "创世区块诞生", "description": "中本聪挖出比特币创世区块（Block #0），并嵌入当天《泰晤士报》头条，比特币网络正式启动。", "category": "技术升级", "impact": "利好"},
+      {"date": "2010-05-22", "title": "比特币披萨日", "description": "程序员 Laszlo 用 10,000 枚 BTC 购买两个披萨，这是比特币首次实物交易，当天被社区定为“比特币披萨日”。", "category": "市场里程碑", "impact": "中性"},
+      {"date": "2011-02-09", "title": "首次触及 1 美元", "description": "比特币价格首次达到 1 美元，开始进入公众视野。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2012-11-28", "title": "第一次减半", "description": "区块奖励从 50 BTC 减至 25 BTC，此后一年比特币价格从约 12 美元上涨至超过 1,000 美元。", "category": "技术升级", "impact": "利好"},
+      {"date": "2013-04-01", "title": "塞浦路斯危机助推破百", "description": "塞浦路斯银行危机引发资本管制，避险需求推动比特币首次突破 100 美元。", "category": "宏观经济", "impact": "利好"},
+      {"date": "2013-11-29", "title": "首次突破 1,000 美元", "description": "比特币价格首次突破 1,000 美元关口，市值首次超过 100 亿美元。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2013-12-05", "title": "中国五部委发文防范比特币风险", "description": "中国人民银行等五部委发布《关于防范比特币风险的通知》，禁止金融机构参与比特币业务，价格应声下跌。", "category": "监管政策", "impact": "利空"},
+      {"date": "2014-02-28", "title": "Mt.Gox 交易所破产", "description": "当时全球最大交易所 Mt.Gox 宣布丢失约 85 万枚比特币并申请破产，比特币进入长达两年的熊市。", "category": "安全事件", "impact": "利空"},
+      {"date": "2016-07-09", "title": "第二次减半", "description": "区块奖励从 25 BTC 减至 12.5 BTC，为 2017 年大牛市埋下伏笔。", "category": "技术升级", "impact": "利好"},
+      {"date": "2017-09-04", "title": "中国“94”监管风暴", "description": "中国七部委联合叫停 ICO，境内交易所陆续关停，比特币短线暴跌后于年底创出新高。", "category": "监管政策", "impact": "利空"},
+      {"date": "2017-12-17", "title": "逼近 20,000 美元", "description": "CME 比特币期货上市当周，比特币创下约 19,800 美元的阶段高点，随后进入 2018 年熊市。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2018-12-15", "title": "熊市触底约 3,200 美元", "description": "比特币从高点回撤约 84%，在 3,200 美元附近见底。", "category": "市场里程碑", "impact": "利空"},
+      {"date": "2020-03-12", "title": "“312”黑天鹅崩盘", "description": "新冠疫情引发全球流动性危机，比特币单日暴跌近 40%，最低触及约 3,800 美元。", "category": "宏观经济", "impact": "利空"},
+      {"date": "2020-05-11", "title": "第三次减半", "description": "区块奖励从 12.5 BTC 减至 6.25 BTC，叠加全球量化宽松，开启新一轮牛市。", "category": "技术升级", "impact": "利好"},
+      {"date": "2020-10-21", "title": "PayPal 宣布支持加密货币", "description": "支付巨头 PayPal 宣布允许用户买卖和持有比特币等加密货币，机构化叙事升温。", "category": "机构采用", "impact": "利好"},
+      {"date": "2021-02-08", "title": "特斯拉买入 15 亿美元比特币", "description": "特斯拉披露购入 15 亿美元比特币并计划接受比特币支付，比特币当日大涨突破 44,000 美元。", "category": "机构采用", "impact": "利好"},
+      {"date": "2021-04-14", "title": "Coinbase 上市，价格创新高", "description": "Coinbase 登陆纳斯达克当日，比特币创下约 64,800 美元新高。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2021-05-19", "title": "“519”大暴跌", "description": "中国三协会发布虚拟货币交易炒作风险提示，叠加杠杆清算，比特币单日暴跌约 30%，最低触及 30,000 美元附近。", "category": "监管政策", "impact": "利空"},
+      {"date": "2021-09-07", "title": "萨尔瓦多正式将比特币列为法币", "description": "萨尔瓦多《比特币法》生效，成为全球首个将比特币作为法定货币的国家。", "category": "监管政策", "impact": "利好"},
+      {"date": "2021-09-24", "title": "中国十部委全面禁止虚拟货币业务", "description": "中国十部委发文将虚拟货币相关业务活动定性为非法金融活动，境内挖矿全面清退。", "category": "监管政策", "impact": "利空"},
+      {"date": "2021-10-19", "title": "美国首只比特币期货 ETF 上市", "description": "ProShares 比特币策略 ETF（BITO）在纽交所上市，首日成交额近 10 亿美元。", "category": "机构采用", "impact": "利好"},
+      {"date": "2021-11-10", "title": "创下约 69,000 美元历史高点", "description": "比特币触及约 69,000 美元，总市值突破 1.3 万亿美元，随后进入下行周期。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2022-05-09", "title": "LUNA/UST 崩盘冲击", "description": "Terra 生态算法稳定币 UST 脱锚，LUNA 归零式暴跌，加密市场总市值蒸发数千亿美元，比特币跌破 30,000 美元。", "category": "安全事件", "impact": "利空"},
+      {"date": "2022-06-13", "title": "Celsius 冻结提款、三箭资本暴雷", "description": "加密借贷平台 Celsius 暂停提款，三箭资本爆仓清算，比特币跌破 18,000 美元。", "category": "安全事件", "impact": "利空"},
+      {"date": "2022-11-11", "title": "FTX 破产", "description": "全球第二大交易所 FTX 申请破产保护，比特币跌至约 15,500 美元的周期低点。", "category": "安全事件", "impact": "利空"},
+      {"date": "2023-03-10", "title": "硅谷银行倒闭引发避险反弹", "description": "硅谷银行破产引发银行业危机，比特币一周内从 20,000 美元下方反弹至 28,000 美元。", "category": "宏观经济", "impact": "利好"},
+      {"date": "2023-06-15", "title": "贝莱德申请比特币现货 ETF", "description": "全球最大资管公司贝莱德向 SEC 提交比特币现货 ETF 申请，点燃机构入场预期。", "category": "机构采用", "impact": "利好"},
+      {"date": "2024-01-10", "title": "美国批准比特币现货 ETF", "description": "SEC 一次性批准 11 只比特币现货 ETF，比特币正式迈入主流金融市场。", "category": "监管政策", "impact": "利好"},
+      {"date": "2024-03-14", "title": "突破 73,000 美元创新高", "description": "ETF 资金持续流入推动比特币在减半前创出约 73,700 美元新高。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2024-04-20", "title": "第四次减半", "description": "区块奖励从 6.25 BTC 减至 3.125 BTC。", "category": "技术升级", "impact": "利好"},
+      {"date": "2024-12-05", "title": "首次突破 100,000 美元", "description": "特朗普当选后加密友好预期发酵，比特币历史性突破 10 万美元关口。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2025-03-06", "title": "美国建立战略比特币储备", "description": "特朗普签署行政命令，建立美国战略比特币储备和数字资产储备库。", "category": "监管政策", "impact": "利好"},
+      {"date": "2025-07-18", "title": "美国签署 GENIUS 稳定币法案", "description": "美国首部联邦层面稳定币监管法案签署生效，被视为加密行业合规化的重要里程碑。", "category": "监管政策", "impact": "利好"}
+    ]
+  },
+  "ETH": {
+    "name": "以太坊",
+    "name_en": "Ethereum",
+    "binance_symbol": "ETHUSDT",
+    "keywords": ["ethereum", "eth", "以太坊", "以太币"],
+    "events": [
+      {"date": "2013-11-27", "title": "以太坊白皮书发布", "description": "19 岁的 Vitalik Buterin 发布以太坊白皮书，提出可编程区块链与智能合约概念。", "category": "技术升级", "impact": "中性"},
+      {"date": "2015-07-30", "title": "以太坊主网上线", "description": "以太坊 Frontier 版本主网正式启动，智能合约时代开启。", "category": "技术升级", "impact": "利好"},
+      {"date": "2016-06-17", "title": "The DAO 黑客事件", "description": "The DAO 智能合约被攻击，约 360 万枚 ETH 被盗，直接引发社区分裂。", "category": "安全事件", "impact": "利空"},
+      {"date": "2016-07-20", "title": "硬分叉：ETH 与 ETC 分裂", "description": "为追回 The DAO 被盗资金，以太坊执行硬分叉，原链成为以太坊经典（ETC）。", "category": "技术升级", "impact": "中性"},
+      {"date": "2018-01-13", "title": "ICO 热潮推升至约 1,400 美元", "description": "ICO 牛市顶点，ETH 创下当时历史高点约 1,400 美元，随后一年回撤超过 90%。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2020-12-01", "title": "信标链上线（Eth2 阶段 0）", "description": "以太坊 2.0 信标链正式启动，PoS 质押机制开始运行。", "category": "技术升级", "impact": "利好"},
+      {"date": "2021-08-05", "title": "伦敦升级与 EIP-1559", "description": "EIP-1559 引入基础手续费销毁机制，ETH 开始具备通缩属性。", "category": "技术升级", "impact": "利好"},
+      {"date": "2021-11-16", "title": "创下约 4,878 美元历史高点", "description": "DeFi 与 NFT 热潮顶峰，ETH 触及历史最高价。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2022-09-15", "title": "The Merge：转向 PoS", "description": "以太坊完成合并，共识机制由 PoW 切换为 PoS，能耗下降约 99.95%，ETH 进入“超声波货币”叙事。", "category": "技术升级", "impact": "利好"},
+      {"date": "2023-04-12", "title": "上海升级开放质押提款", "description": "上海/卡佩拉升级允许验证者提取质押的 ETH，质押流动性风险解除。", "category": "技术升级", "impact": "利好"},
+      {"date": "2024-03-13", "title": "Dencun 升级（EIP-4844）", "description": "引入 Blob 数据存储，Layer2 网络手续费大幅下降 90% 以上。", "category": "技术升级", "impact": "利好"},
+      {"date": "2024-07-23", "title": "以太坊现货 ETF 在美上市", "description": "美国 SEC 批准的多只以太坊现货 ETF 正式开始交易，ETH 成为第二个拥有美股现货 ETF 的加密资产。", "category": "监管政策", "impact": "利好"},
+      {"date": "2025-05-07", "title": "Pectra 升级上线", "description": "以太坊迄今最大规模升级之一，涵盖账户抽象（EIP-7702）、验证者质押上限提升等 11 项改进。", "category": "技术升级", "impact": "利好"}
+    ]
+  },
+  "BNB": {
+    "name": "币安币",
+    "name_en": "BNB",
+    "binance_symbol": "BNBUSDT",
+    "keywords": ["bnb", "binance", "币安"],
+    "events": [
+      {"date": "2017-07-08", "title": "币安成立并发行 BNB", "description": "赵长鹏（CZ）创立币安交易所，BNB 通过 ICO 以约 0.1 美元价格发行，总量 2 亿枚。", "category": "生态发展", "impact": "中性"},
+      {"date": "2019-04-23", "title": "币安链主网上线", "description": "BNB 从 ERC-20 代币迁移至自研币安链主网，成为链上原生资产。", "category": "技术升级", "impact": "利好"},
+      {"date": "2020-09-01", "title": "币安智能链（BSC）上线", "description": "兼容 EVM 的币安智能链主网上线，BNB 成为链上 Gas 代币，开启 DeFi 生态扩张。", "category": "生态发展", "impact": "利好"},
+      {"date": "2021-02-19", "title": "BSC 生态爆发，BNB 跻身市值前三", "description": "PancakeSwap 等 BSC DeFi 项目爆发，BNB 单月上涨数倍，市值一度位列加密货币第三。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2021-05-10", "title": "创下约 690 美元阶段高点", "description": "BNB 触及约 690 美元的历史高点，较发行价上涨超过 6000 倍。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2022-10-07", "title": "BNB Chain 跨链桥被黑", "description": "BSC Token Hub 跨链桥遭攻击，黑客增发约 200 万枚 BNB（约 5.7 亿美元），链一度暂停出块。", "category": "安全事件", "impact": "利空"},
+      {"date": "2023-11-21", "title": "币安与美国司法部和解", "description": "币安承认反洗钱违规并支付 43 亿美元罚款，CZ 辞去 CEO 职务，市场担忧落地后 BNB 企稳回升。", "category": "监管政策", "impact": "利空"},
+      {"date": "2024-12-04", "title": "突破 790 美元创历史新高", "description": "BNB 突破 2021 年前高，创下约 793 美元历史新高，BNB Chain 生态持续回暖。", "category": "市场里程碑", "impact": "利好"}
+    ]
+  },
+  "SOL": {
+    "name": "索拉纳",
+    "name_en": "Solana",
+    "binance_symbol": "SOLUSDT",
+    "keywords": ["solana", "sol", "索拉纳"],
+    "events": [
+      {"date": "2020-03-16", "title": "Solana 主网 Beta 上线", "description": "主打高吞吐量的 Solana 主网 Beta 版上线，理论 TPS 可达数万。", "category": "技术升级", "impact": "中性"},
+      {"date": "2021-09-14", "title": "网络宕机 17 小时", "description": "Solana 因交易洪流导致网络停止出块约 17 小时，高性能链的稳定性受到质疑。", "category": "安全事件", "impact": "利空"},
+      {"date": "2021-11-06", "title": "创下约 260 美元历史高点", "description": "NFT 与 DeFi 热潮推动 SOL 市值进入前五，价格触及约 260 美元。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2022-11-11", "title": "FTX 暴雷重创，跌至 8 美元", "description": "FTX/Alameda 是 Solana 最大支持者，其破产导致 SOL 两周内暴跌超 60%，最低触及约 8 美元。", "category": "安全事件", "impact": "利空"},
+      {"date": "2023-12-22", "title": "强势复苏重返 100 美元", "description": "生态重建叠加空投热潮，SOL 从底部上涨超 10 倍，重返 100 美元上方。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2024-03-18", "title": "Meme 币热潮推动突破 200 美元", "description": "BONK、WIF 等 Solana 生态 Meme 币爆发，链上活跃度创纪录，SOL 突破 200 美元。", "category": "生态发展", "impact": "利好"},
+      {"date": "2025-01-19", "title": "创下约 294 美元历史新高", "description": "特朗普官方 Meme 币 TRUMP 选择在 Solana 发行，链上流量暴增，SOL 创下约 294 美元新高。", "category": "市场里程碑", "impact": "利好"}
+    ]
+  },
+  "XRP": {
+    "name": "瑞波币",
+    "name_en": "XRP",
+    "binance_symbol": "XRPUSDT",
+    "keywords": ["xrp", "ripple", "瑞波"],
+    "events": [
+      {"date": "2012-09-27", "title": "Ripple 公司成立", "description": "OpenCoin（后更名 Ripple）成立，XRP Ledger 上线，主打跨境支付结算。", "category": "生态发展", "impact": "中性"},
+      {"date": "2018-01-04", "title": "创下约 3.84 美元历史高点", "description": "牛市顶点 XRP 市值一度超过以太坊排名第二，价格触及约 3.84 美元。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2020-12-22", "title": "SEC 起诉 Ripple", "description": "美国 SEC 指控 Ripple 通过 XRP 进行未注册证券发行，多家交易所下架 XRP，价格腰斩。", "category": "监管政策", "impact": "利空"},
+      {"date": "2023-07-13", "title": "法院裁定交易所销售不属证券", "description": "美国法院裁定 XRP 在二级市场的程序化销售不构成证券发行，XRP 单日暴涨超 70%。", "category": "监管政策", "impact": "利好"},
+      {"date": "2024-11-06", "title": "特朗普当选后暴涨", "description": "加密友好政府预期下，XRP 一个月内从 0.5 美元上涨至接近 3 美元，重回市值前三。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2025-08-08", "title": "SEC 与 Ripple 和解撤诉", "description": "双方正式撤回上诉，持续近五年的诉讼终结，XRP 法律不确定性彻底消除。", "category": "监管政策", "impact": "利好"}
+    ]
+  },
+  "DOGE": {
+    "name": "狗狗币",
+    "name_en": "Dogecoin",
+    "binance_symbol": "DOGEUSDT",
+    "keywords": ["dogecoin", "doge", "狗狗币"],
+    "events": [
+      {"date": "2013-12-06", "title": "狗狗币诞生", "description": "Billy Markus 与 Jackson Palmer 以柴犬表情包为灵感创建狗狗币，最初只是一个玩笑。", "category": "生态发展", "impact": "中性"},
+      {"date": "2021-01-28", "title": "散户逼空潮，单日暴涨 800%", "description": "GameStop 事件外溢至加密市场，WSB 散户涌入 DOGE，价格单日上涨约 8 倍。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2021-02-04", "title": "马斯克连续发推带货", "description": "马斯克称“狗狗币是人民的加密货币”，DOGE 进入主流视野并开启数月上涨。", "category": "机构采用", "impact": "利好"},
+      {"date": "2021-05-08", "title": "SNL 之夜：历史新高后暴跌", "description": "马斯克登上《周六夜现场》，DOGE 盘中触及约 0.74 美元历史高点后暴跌，成为“买预期卖事实”经典案例。", "category": "市场里程碑", "impact": "利空"},
+      {"date": "2022-10-27", "title": "马斯克收购推特，DOGE 翻倍", "description": "马斯克完成推特收购，市场押注 DOGE 支付整合，DOGE 一周上涨超 100%。", "category": "机构采用", "impact": "利好"},
+      {"date": "2024-11-12", "title": "特朗普宣布成立“DOGE”政府效率部", "description": "特朗普宣布由马斯克领导政府效率部（Department of Government Efficiency，缩写 DOGE），狗狗币大涨。", "category": "宏观经济", "impact": "利好"}
+    ]
+  },
+  "ADA": {
+    "name": "艾达币",
+    "name_en": "Cardano",
+    "binance_symbol": "ADAUSDT",
+    "keywords": ["cardano", "ada", "艾达币", "卡尔达诺"],
+    "events": [
+      {"date": "2017-09-29", "title": "Cardano 主网上线", "description": "由以太坊联合创始人 Charles Hoskinson 主导的 Cardano 主网启动，主打学术同行评审的开发路线。", "category": "技术升级", "impact": "中性"},
+      {"date": "2021-09-02", "title": "创下约 3.10 美元历史高点", "description": "智能合约上线预期推动 ADA 创下历史高点，市值一度排名第三。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2021-09-12", "title": "Alonzo 升级上线智能合约", "description": "Alonzo 硬分叉正式为 Cardano 引入智能合约功能，生态建设起步。", "category": "技术升级", "impact": "利好"},
+      {"date": "2022-09-22", "title": "Vasil 升级", "description": "Vasil 硬分叉提升网络吞吐量并降低交易成本。", "category": "技术升级", "impact": "中性"},
+      {"date": "2024-11-06", "title": "大选行情，月涨超 200%", "description": "特朗普当选后山寨币普涨，Hoskinson 表态愿参与美国加密政策制定，ADA 大幅上涨。", "category": "市场里程碑", "impact": "利好"}
+    ]
+  },
+  "LTC": {
+    "name": "莱特币",
+    "name_en": "Litecoin",
+    "binance_symbol": "LTCUSDT",
+    "keywords": ["litecoin", "ltc", "莱特币"],
+    "events": [
+      {"date": "2011-10-07", "title": "莱特币诞生", "description": "前谷歌工程师 Charlie Lee 创建莱特币，定位为“数字白银”，出块时间为比特币的四分之一。", "category": "技术升级", "impact": "中性"},
+      {"date": "2017-05-10", "title": "率先激活隔离见证", "description": "莱特币先于比特币激活 SegWit，为比特币升级提供了实测样本，价格月内上涨近 10 倍。", "category": "技术升级", "impact": "利好"},
+      {"date": "2017-12-19", "title": "创下约 375 美元历史高点", "description": "牛市顶点 LTC 触及约 375 美元；次日创始人 Charlie Lee 宣布已清仓全部 LTC 以回避利益冲突。", "category": "市场里程碑", "impact": "利好"},
+      {"date": "2019-08-05", "title": "第二次减半", "description": "区块奖励从 25 LTC 减至 12.5 LTC，减半后价格持续回落，成为“减半即利好出尽”的典型案例。", "category": "技术升级", "impact": "利空"},
+      {"date": "2023-08-02", "title": "第三次减半", "description": "区块奖励减至 6.25 LTC，网络算力维持历史高位。", "category": "技术升级", "impact": "中性"}
+    ]
+  },
+  "TRX": {
+    "name": "波场币",
+    "name_en": "TRON",
+    "binance_symbol": "TRXUSDT",
+    "keywords": ["tron", "trx", "波场"],
+    "events": [
+      {"date": "2017-08-28", "title": "波场 TRON 创立并完成 ICO", "description": "孙宇晨创立波场 TRON，定位为去中心化内容娱乐协议，ICO 融资约 7000 万美元。", "category": "生态发展", "impact": "中性"},
+      {"date": "2018-05-31", "title": "TRON 主网上线", "description": "波场主网正式启动，TRX 从 ERC-20 代币迁移至自研公链。", "category": "技术升级", "impact": "利好"},
+      {"date": "2018-07-24", "title": "收购 BitTorrent", "description": "波场以约 1.4 亿美元收购 BitTorrent，获得上亿用户入口。", "category": "生态发展", "impact": "利好"},
+      {"date": "2021-04-17", "title": "稳定币结算量爆发", "description": "TRON 网络凭借低手续费成为 USDT 转账主力链，链上 USDT 流通量超越以太坊。", "category": "生态发展", "impact": "利好"},
+      {"date": "2024-12-03", "title": "创下约 0.44 美元历史新高", "description": "山寨季行情中 TRX 单日上涨超 70%，突破 2018 年前高，市值重回前十。", "category": "市场里程碑", "impact": "利好"}
+    ]
+  },
+  "ZEC": {
+    "name": "大零币",
+    "name_en": "Zcash",
+    "binance_symbol": "ZECUSDT",
+    "keywords": ["zcash", "zec", "大零币"],
+    "events": [
+      {"date": "2016-10-28", "title": "Zcash 主网上线", "description": "基于 zk-SNARKs 零知识证明的隐私币 Zcash 上线，上线初期因稀缺性被爆炒，单枚价格一度高达数千美元。", "category": "技术升级", "impact": "利好"},
+      {"date": "2018-10-29", "title": "Sapling 升级", "description": "Sapling 网络升级大幅优化屏蔽交易的效率，隐私交易耗时从数十秒降至数秒。", "category": "技术升级", "impact": "利好"},
+      {"date": "2020-11-18", "title": "首次减半与 Canopy 升级", "description": "区块奖励从 6.25 ZEC 减至 3.125 ZEC，同时调整开发基金分配机制。", "category": "技术升级", "impact": "中性"},
+      {"date": "2024-11-16", "title": "Zashi 钱包推动隐私叙事回暖", "description": "ECC 推出的 Zashi 钱包默认屏蔽交易，隐私板块行情回暖，ZEC 底部反弹数倍。", "category": "生态发展", "impact": "利好"}
+    ]
+  }
+}
