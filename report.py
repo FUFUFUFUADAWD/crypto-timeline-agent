@@ -176,8 +176,8 @@ def render_html(symbol, coin_name, ticker, klines, news_items, events):
     return path
 
 
-def render_markdown(symbol, coin_name, ticker, klines, news_items, events):
-    """渲染 Markdown 报告并写入 output/ 目录，返回文件路径。"""
+def build_markdown(symbol, coin_name, ticker, klines, news_items, events):
+    """构建 Markdown 报告文本并返回字符串。"""
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     lines = [
         "# {}（{}）时间线资讯报告".format(coin_name, symbol.upper()),
@@ -221,10 +221,15 @@ def render_markdown(symbol, coin_name, ticker, klines, news_items, events):
     else:
         lines.append("事件库中暂无该币种记录。")
     lines += ["", "---", "本报告仅供学习研究，不构成任何投资建议。", ""]
+    return "\n".join(lines)
 
+
+def render_markdown(symbol, coin_name, ticker, klines, news_items, events):
+    """渲染 Markdown 报告并写入 output/ 目录，返回文件路径。"""
+    text = build_markdown(symbol, coin_name, ticker, klines, news_items, events)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     path = os.path.join(OUTPUT_DIR, "report_{}_{}.md".format(
         symbol.upper(), datetime.now().strftime("%Y%m%d_%H%M%S")))
     with open(path, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+        f.write(text)
     return path

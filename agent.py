@@ -15,6 +15,7 @@
   python agent.py price BNB                     # BNB 实时行情
   python agent.py report BTC                    # 生成完整时间线报告
   python agent.py ask "2021年比特币发生了什么"   # 自然语言提问
+  python agent.py web                           # 启动 Web 控制台（浏览器可视化界面）
 """
 import argparse
 import re
@@ -146,6 +147,11 @@ def cmd_ask(args):
         print("    {}".format(e["description"]))
 
 
+def cmd_web(args):
+    import web
+    web.run(port=args.port)
+
+
 def build_parser():
     p = argparse.ArgumentParser(
         prog="agent.py",
@@ -184,6 +190,10 @@ def build_parser():
     sp = sub.add_parser("ask", help="自然语言提问，如：2021年比特币发生了什么")
     sp.add_argument("question", help="你的问题")
     sp.set_defaults(func=cmd_ask)
+
+    sp = sub.add_parser("web", help="启动 Web 控制台（浏览器可视化分析台）")
+    sp.add_argument("--port", type=int, default=8000, help="端口号（默认 8000）")
+    sp.set_defaults(func=cmd_web)
     return p
 
 

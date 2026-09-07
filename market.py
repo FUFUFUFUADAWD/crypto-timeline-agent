@@ -16,14 +16,14 @@ UA = "crypto-timeline-agent/1.0"
 TIMEOUT = 12
 
 
-def _get_json(url):
+def _get_json(url, timeout=None):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+    with urllib.request.urlopen(req, timeout=timeout or TIMEOUT) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
-def _ticker_binance(binance_symbol):
-    d = _get_json("https://api.binance.com/api/v3/ticker/24hr?symbol=" + binance_symbol)
+def _ticker_binance(binance_symbol, timeout=None):
+    d = _get_json("https://api.binance.com/api/v3/ticker/24hr?symbol=" + binance_symbol, timeout=timeout)
     return {
         "source": "Binance",
         "last_price": float(d["lastPrice"]),
@@ -34,8 +34,8 @@ def _ticker_binance(binance_symbol):
     }
 
 
-def _ticker_okx(inst_id):
-    d = _get_json("https://www.okx.com/api/v5/market/ticker?instId=" + inst_id)
+def _ticker_okx(inst_id, timeout=None):
+    d = _get_json("https://www.okx.com/api/v5/market/ticker?instId=" + inst_id, timeout=timeout)
     row = d["data"][0]
     last = float(row["last"])
     open24 = float(row["open24h"])
@@ -49,9 +49,9 @@ def _ticker_okx(inst_id):
     }
 
 
-def _ticker_coingecko(cg_id):
+def _ticker_coingecko(cg_id, timeout=None):
     d = _get_json("https://api.coingecko.com/api/v3/simple/price?ids={}"
-                  "&vs_currencies=usd&include_24hr_change=true".format(cg_id))
+                  "&vs_currencies=usd&include_24hr_change=true".format(cg_id), timeout=timeout)
     row = d[cg_id]
     return {
         "source": "CoinGecko",
@@ -63,8 +63,8 @@ def _ticker_coingecko(cg_id):
     }
 
 
-def _ticker_coinpaprika(cp_id):
-    d = _get_json("https://api.coinpaprika.com/v1/tickers/" + cp_id)
+def _ticker_coinpaprika(cp_id, timeout=None):
+    d = _get_json("https://api.coinpaprika.com/v1/tickers/" + cp_id, timeout=timeout)
     q = d["quotes"]["USD"]
     return {
         "source": "CoinPaprika",
@@ -91,7 +91,7 @@ _IDS = {
 }
 
 
-def get_ticker(symbol, binance_symbol=None):
+def get_ticker(symbol, binance_symbol=None, timeout=None):
     """获取 24 小时行情快照，多源容灾。
 
     参数:
@@ -104,10 +104,10 @@ def get_ticker(symbol, binance_symbol=None):
     ids = _IDS.get(symbol, {"okx": symbol + "-USDT", "cg": symbol.lower(), "cp": symbol.lower()})
 
     providers = [
-        ("Binance", lambda: _ticker_binance(binance_symbol)),
-        ("OKX", lambda: _ticker_okx(ids["okx"])),
-        ("CoinGecko", lambda: _ticker_coingecko(ids["cg"])),
-        ("CoinPaprika", lambda: _ticker_coinpaprika(ids["cp"])),
+        ("Binance", lambda: _ticker_binance(binance_symbol, timeout)),
+        ("OKX", lambda: _ticker_okx(ids["okx"], timeout)),
+        ("CoinGecko", lambda: _ticker_coingecko(ids["cg"], timeout)),
+        ("CoinPaprika", lambda: _ticker_coinpaprika(ids["cp"], timeout)),
     ]
     for name, fn in providers:
         try:
@@ -120,7 +120,7 @@ def get_ticker(symbol, binance_symbol=None):
     return None
 
 
-def get_klines(symbol, interval="1d", limit=30, binance_symbol=None):
+def get_klines(symbol, interval="1d", limit=30, binance_symbol=None, timeout=None):
     """获取 K 线收盘价序列 [(日期, 收盘价), ...]，多源容灾，失败返回空列表。"""
     symbol = symbol.upper()
     binance_symbol = binance_symbol or (symbol + "USDT")
@@ -132,7 +132,7 @@ def get_klines(symbol, interval="1d", limit=30, binance_symbol=None):
     # 源 1：币安
     try:
         rows = _get_json("https://api.binance.com/api/v3/klines?symbol={}&interval={}&limit={}"
-                         .format(binance_symbol, interval, limit))
+                         .format(binance_symbol, interval, limit), timeout=timeout)
         return [(_fmt(r[0]), float(r[4])) for r in rows]
     except Exception as e:
         print("[行情] Binance K线失败，尝试 OKX: {}".format(e))
@@ -142,7 +142,7 @@ def get_klines(symbol, interval="1d", limit=30, binance_symbol=None):
         bar = {"1d": "1D", "4h": "4H", "1h": "1H"}.get(interval, "1D")
         inst = _IDS.get(symbol, {}).get("okx", symbol + "-USDT")
         d = _get_json("https://www.okx.com/api/v5/market/candles?instId={}&bar={}&limit={}"
-                      .format(inst, bar, limit))
+                      .format(inst, bar, limit), timeout=timeout)
         rows = sorted(d["data"], key=lambda r: int(r[0]))
         return [(_fmt(int(r[0])), float(r[4])) for r in rows]
     except Exception as e:

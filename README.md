@@ -9,6 +9,7 @@
 Crypto Timeline Agent 是一个**零依赖**的 Python 命令行 AI Agent，面向加密货币资讯场景：
 
 - 🕘 **历史事件时间线**：内置 10 个主流币种（BTC、ETH、BNB、SOL、XRP、DOGE、ADA、LTC、TRX、ZEC）从创世至今的 90+ 条重大金融事件，覆盖监管政策、技术升级、市场里程碑、安全事件、机构采用等 7 大分类，每条事件标注「利好 / 利空 / 中性」影响方向
+- 🖥️ **Web 可视化控制台「链事纪」**：一行命令启动本地 Web 分析台，含市场总览（全币种 24h/7日/30日 涨跌表）、大事件时间线、最新资讯、研究报告四大面板，支持一键复制 / 下载 Markdown 报告
 - 📰 **最新资讯聚合**：自动抓取 CoinDesk、Cointelegraph、Decrypt、The Block、Bitcoin Magazine 等主流媒体 RSS，按币种关键词智能过滤
 - 💹 **实时行情**：多数据源自动容灾（Binance → OKX → CoinGecko → CoinPaprika），任一源不可用自动切换
 - 📊 **一键生成报告**：输出 HTML（可视化时间线 + 走势图，红涨绿跌配色）与 Markdown 双格式资讯报告
@@ -39,6 +40,11 @@ cd crypto-timeline-agent
 **第 3 步：直接运行（无需安装任何依赖！）**
 
 ```bash
+# 方式一（推荐）：启动 Web 可视化控制台「链事纪」
+python agent.py web
+# 然后用浏览器打开 http://127.0.0.1:8000
+
+# 方式二：命令行操作
 # 查看支持的币种
 python agent.py list
 
@@ -72,6 +78,7 @@ python agent.py ask "2021年比特币发生了什么大事"
 
 | 命令 | 作用 | 示例 |
 | --- | --- | --- |
+| `web` | 启动 Web 可视化控制台 | `python agent.py web --port 8000` |
 | `list` | 列出支持的币种 | `python agent.py list` |
 | `timeline` | 查询历史大事件时间线 | `python agent.py timeline BTC --from 2020 --to 2021` |
 | `news` | 抓取币种最新资讯 | `python agent.py news ETH --limit 10` |
@@ -83,7 +90,10 @@ python agent.py ask "2021年比特币发生了什么大事"
 
 ```
 crypto-timeline-agent/
-├── agent.py          # CLI 主入口（含自然语言 ask 模式）
+├── agent.py          # CLI 主入口（含自然语言 ask 模式、web 启动命令）
+├── web.py            # Web 控制台后端（标准库 http.server 提供 JSON API）
+├── static/
+│   └── index.html    # Web 控制台前端「链事纪」（单页应用，原生 JS）
 ├── events_db.py      # 事件数据库：加载 / 查询 / 过滤
 ├── market.py         # 行情模块：多数据源容灾获取实时价格与 K 线
 ├── news.py           # 新闻模块：RSS 抓取 + 币种关键词过滤
