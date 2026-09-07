@@ -307,6 +307,7 @@ async function loadReport(){
   try{
     const d = await (await fetch('/api/report_md?coin='+curCoin)).json();
     lastMd=d.markdown;
+    if(!lastMd){ throw new Error(d.error || '报告生成失败，请稍后重试'); }
     body.innerHTML=`<div class="report-actions">
         <button class="btn" onclick="copyMd()">复制 Markdown</button>
         <button class="btn ghost" onclick="downloadMd()">下载 .md 文件</button>

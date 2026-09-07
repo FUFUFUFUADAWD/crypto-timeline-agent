@@ -7,7 +7,7 @@ import html
 import os
 from datetime import datetime
 
-from market import format_price
+from market import format_price, format_volume
 
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 
